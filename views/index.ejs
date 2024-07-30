@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Blog</h1>
+        <a href="/new">Create Post</a>
+    </header>
+    <div class="container">
+        <h2>All Posts</h2>
+        <ul>
+            <% posts.forEach(post => { %>
+                <li class="card">
+                    <h2><%= post.title %></h2>
+                    <p><%= post.content %></p>
+                    <div class="btn-container">
+                        <a href="/edit/<%= post.id %>"><button>Edit</button></a>
+                        <a href="/delete/<%= post.id %>"><button>Delete</button></a>
+                    </div>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+</body>
+</html>
